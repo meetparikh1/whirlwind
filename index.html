@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Packages</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #000000, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      background-color: #000; 
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 350px;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #000000;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #000000;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      opacity: 0.9;
+    }
+    
+header {
+  position: relative;
+  top: 0;
+  padding: 10px 16px;
+  background: #000000;
+  color: #f1f1f1;
+         
+} 
+nav a {
+    color: white;
+    margin: 0 1px;
+    text-decoration: none;
+    gap: 30px;
+    position: sticky;
+    padding-left: 30px;
+}
+
+a:link {
+    padding-left:30px;
+    padding-bottom: 10px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(88, 88, 88);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  a:active {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: underline;
+    }
+
+.inline{
+    display: inline;
+    font-size: large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="whirl.png" alt="Whirlwind Edits" class="logo">
+    <form action="insert.php" method="POST" onsubmit="return validateForm()">
+      <input type="text" id="name" name="name" placeholder="Name" required><br>
+      <input type="text" name="course" placeholder="Video Edit" required><br>
+      <input type="submit" value="Client registered">
+    </form>
+  </div>
+ 
+
+  <script>
+    function validateForm() {
+      const nameInput = document.getElementById("name").value.trim();
+      const firstLetter = nameInput.charAt(0);
+
+      if (firstLetter !== firstLetter.toUpperCase()) {
+        alert("The first letter of the name should be capital.");
+        return false;
+      }
+
+      return confirm("Are you sure you want to submit?");
+    }
+  </script>
+</body>
+</html>
